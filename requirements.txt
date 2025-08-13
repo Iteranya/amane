@@ -4,14 +4,3 @@ openai
 soundfile
 kokoro
 numpy
-librosa
-soundfile
-pydub
-sox
-pedalboard
-
-# AI Model Inference Libraries
-# NOTE: PyTorch (torch) is NOT listed here. See installation instructions below.
-fairseq
-torchcrepe
-onnxruntime-gpu

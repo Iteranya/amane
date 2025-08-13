@@ -1,12 +1,16 @@
 Stuff To Do:
 
-- Fix the RVC imports, get it ready
+- Fix the RVC imports, get it ready, even though it's optional
+- Make sure the kokoro library works (50/50 chance is not shippable)
 - Add the text parser
 - Add the data manager module 
 - Prepare a space for training module (Planned Feature, but not priority yet)
-- Prepare the main module 
+- Prepare the main module, get it to work from Text Parser to Kokoro
 - Test The Module (IMPORTANT DO NOT SKIP I SWEAR TO GOD DO NOT SKIP)
 - Add the routes
 - Add The Front End (With AI)
 - Combine them all
+- Haphazardly Add The RVC Feature When You Feel Like It 
+- Test The Module (YES AGAIN, FROM THE START)
+- Add the training module (Make it separate from the main ones)
 - Profit???
