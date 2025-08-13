@@ -1,0 +1,9 @@
+torch
+transformers
+huggingface_hub
+bitsandbytes
+snac
+librosa
+soundfile
+ipywebrtc
+ipywidgets
