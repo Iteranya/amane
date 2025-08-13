@@ -8,3 +8,4 @@ soundfile
 ipywebrtc
 ipywidgets
 hf_xet
+accelerate
