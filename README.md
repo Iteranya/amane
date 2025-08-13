@@ -1,0 +1,2 @@
+# amane
+Amane-chan~
