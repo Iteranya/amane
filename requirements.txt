@@ -4,3 +4,6 @@ openai
 soundfile
 kokoro
 numpy
+pytesseract
+fitz
+opencv-python
