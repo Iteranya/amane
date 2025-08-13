@@ -1,0 +1,19 @@
+{
+  "api_settings": {
+    "base_url": "http://localhost:5001/v1/",
+    "api_key": "not-needed",
+    "model": ""
+  },
+  "generation_settings": {
+    "text": "I call upon thee from the infinite static, within the precipice of the unreal... Can you hear my voice?",
+    "voice": "tara",
+    "output_file": "outputs/simple.wav",
+    "play_audio": true
+  },
+  "model_parameters": {
+    "max_tokens": 1200,
+    "temperature": 0.6,
+    "top_p": 0.9,
+    "repetition_penalty": 1.1
+  }
+}

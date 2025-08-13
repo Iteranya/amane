@@ -1,11 +1,5 @@
+numpy 
 torch
-transformers
-huggingface_hub
-bitsandbytes
-snac
-librosa
+openai
 soundfile
-ipywebrtc
-ipywidgets
-hf_xet
-accelerate
+kokoro
