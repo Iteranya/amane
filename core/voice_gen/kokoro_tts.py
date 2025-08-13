@@ -28,7 +28,7 @@ def get_pipeline(lang_code: str):
 
     return PIPELINE_CACHE[lang_code]
 
-def generate_speech(
+async def generate_speech(
     text: str,
     output_path: str,
     lang_code: str = 'a',
@@ -55,7 +55,7 @@ def generate_speech(
 
     pipeline = get_pipeline(lang_code)
     if not pipeline:
-        return
+        return False
 
     print("Generating audio... This may take a moment.")
 
@@ -74,7 +74,7 @@ def generate_speech(
 
     if not audio_chunks:
         print("No audio was generated. The input text might be empty or invalid.")
-        return
+        return False
 
     # Concatenate all audio chunks into a single NumPy array
     full_audio = np.concatenate(audio_chunks)
@@ -85,8 +85,11 @@ def generate_speech(
     try:
         sf.write(output_path, full_audio, sample_rate)
         print(f"\n✅ Successfully saved speech to '{os.path.abspath(output_path)}'")
+        return True
+    
     except Exception as e:
         print(f"Error saving audio file: {e}")
+        return False
 
 
 # This block allows you to run this file directly for a quick test.

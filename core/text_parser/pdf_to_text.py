@@ -50,7 +50,7 @@ def enhance_image_for_ocr(image):
     return Image.fromarray(binary_image)
 
 
-def pdf_to_text_pipeline(pdf_path, ocr_threshold=100, use_image_enhancement=True):
+async def pdf_to_text_pipeline(pdf_path, ocr_threshold=100, use_image_enhancement=True):
     """
     The main pipeline to convert a PDF to raw text.
 
@@ -121,62 +121,3 @@ def pdf_to_text_pipeline(pdf_path, ocr_threshold=100, use_image_enhancement=True
     except Exception as e:
         print(f"❌ Critical Error during OCR processing: {e}")
         return ""
-
-
-if __name__ == '__main__':
-    # --- USAGE EXAMPLE ---
-
-    # Create dummy PDFs for testing
-    # 1. A digitally-native PDF
-    doc_digital = fitz.open()
-    page_digital = doc_digital.new_page()
-    page_digital.insert_text((50, 72), "This is a digitally-native PDF.\nIt has selectable text and should be processed very quickly.", fontsize=12)
-    digital_pdf_path = "digital_example.pdf"
-    doc_digital.save(digital_pdf_path)
-    doc_digital.close()
-
-    # 2. An image-based PDF (simulating a scan)
-    # Create an image first
-    img = Image.new('RGB', (600, 800), color = 'white')
-    from PIL import ImageDraw, ImageFont
-    d = ImageDraw.Draw(img)
-    try:
-        # Use a common font, fallback to default
-        font = ImageFont.truetype("arial.ttf", 20)
-    except IOError:
-        font = ImageFont.load_default()
-    d.text((50,50), "This is a simulated scanned document.\nText is part of the image.\nOCR is required to read this.", fill=(0,0,0), font=font)
-    img_path = "scan_image.png"
-    img.save(img_path)
-
-    # Convert image to PDF
-    doc_image = fitz.open()
-    img_doc = fitz.open(img_path)
-    pdf_bytes = img_doc.convert_to_pdf()
-    img_pdf = fitz.open("pdf", pdf_bytes)
-    doc_image.insert_pdf(img_pdf)
-    image_pdf_path = "image_example.pdf"
-    doc_image.save(image_pdf_path)
-    doc_image.close()
-
-
-    # --- Run the pipeline on both files ---
-
-    print("\n" + "="*50)
-    print("Testing with a digitally-native PDF:")
-    digital_text = pdf_to_text_pipeline(digital_pdf_path)
-    print("\n--- Extracted Text ---")
-    print(digital_text)
-    print("="*50 + "\n")
-
-    print("\n" + "="*50)
-    print("Testing with a scanned (image-based) PDF:")
-    image_text = pdf_to_text_pipeline(image_pdf_path)
-    print("\n--- Extracted Text ---")
-    print(image_text)
-    print("="*50)
-
-    # Clean up dummy files
-    os.remove(digital_pdf_path)
-    os.remove(image_pdf_path)
-    os.remove(img_path)
