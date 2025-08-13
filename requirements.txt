@@ -7,3 +7,4 @@ librosa
 soundfile
 ipywebrtc
 ipywidgets
+hf_xet

@@ -6,11 +6,11 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 from huggingface_hub import snapshot_download
 import config
 
-def load_snac_model(device="cuda"):
+def load_snac_model(device="gpu"):
     snac_model = SNAC.from_pretrained("hubertsiuzdak/snac_24khz")
     return snac_model.to(device)
 
-def load_text_model(model_name, device="cuda"):
+def load_text_model(model_name, device="gpu"):
     # Download only config and safetensors
     snapshot_download(
         repo_id=model_name,
