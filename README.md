@@ -110,7 +110,7 @@ index.html       # Built-in UI
 
 ## License & Pledge
 
-* **License:** [AGPL-3.0](LICENSE.md)
+* **License:** [AGPL-3.0](LICENSE)
 * **Pledge:** [Read the ethical pledge here](PLEDGE.md)
 
 By Artes Paradox. Have fun and keep it legal-ish. 😎
