@@ -16,7 +16,6 @@ Amane is a FastAPI-based project for managing PDFs and audio files, with plans t
 
 <img width="971" height="861" alt="image" src="https://github.com/user-attachments/assets/b669342b-5fcc-4f75-9da1-c3965f7a3540" />
 
-
 ---
 
 ## Planned Features / Roadmap
@@ -35,16 +34,19 @@ Amane is a FastAPI-based project for managing PDFs and audio files, with plans t
 ```bash
 git clone https://github.com/Iteranya/amane.git
 cd amane
-```
+````
 
 2. Install Tesseract Here:
+
 ```
 https://github.com/UB-Mannheim/tesseract/wiki
 ```
+
 3. Install dependencies:
 
 ```bash
 python -m venv venv
+venv/scripts/activate
 pip install uv
 uv pip install -r requirements.txt
 ```
@@ -108,6 +110,17 @@ index.html       # Built-in UI
 
 ---
 
+## Attributions
+
+* **Text-to-Speech (TTS) AI**: Kokoro by Hexgrad
+* **OCR Engine**: Tesseract OCR by [Google](https://github.com/tesseract-ocr/tesseract)
+* **Web Framework**: FastAPI by [Sebastián Ramírez](https://fastapi.tiangolo.com/)
+* **Python** and its ecosystem of libraries for PDF parsing, audio handling, and file management.
+
+Please respect the licenses of these projects when using Amane.
+
+---
+
 ## License & Pledge
 
 * **License:** [AGPL-3.0](LICENSE)
@@ -116,6 +129,11 @@ index.html       # Built-in UI
 By Artes Paradox. Have fun and keep it legal-ish. 😎
 
 ---
+
+## Bug
+* I might forgot a few dependencies, just raise issue if you run into any problem
+* Might be hardcoded to use CUDA, or maybe not, I dunno... Just raise issue if you can't run it with CPU
+* UI language and character selector is broken, I know, will fix
 
 ## Notes
 
