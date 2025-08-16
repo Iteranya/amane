@@ -14,8 +14,6 @@ Amane is a FastAPI-based project for managing PDFs and audio files, with plans t
 - Convert a PDF into an audiobook (PDF → Text → Audio).  
 - Simple REST API endpoints for power users.
 
-<img width="971" height="861" alt="image" src="https://github.com/user-attachments/assets/b669342b-5fcc-4f75-9da1-c3965f7a3540" />
-
 ---
 
 ## Planned Features / Roadmap
